@@ -8,12 +8,12 @@ import {connect} from 'react-redux'
 
 function App({fetchApiHandler , projects}) {
 
-  useEffect(() => fetchApiHandler, []);
+  useEffect(fetchApiHandler, []);
 
 
   return (
     <div className="App">
-  {JSON.stringify.projects}
+  {JSON.stringify(projects)}
     </div>
   );
 }
@@ -23,6 +23,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapActionsToProps = (dispatch) =>
-bindActionCreators({fetchApiHandler , projects},dispatch)
+bindActionCreators({fetchApiHandler},dispatch)
 
-export default connect((mapStateToProps, mapActionsToProps) (App));
+export default connect(mapStateToProps, mapActionsToProps)(App);
